@@ -24,12 +24,15 @@ namespace lab5_visual.Views
                 string[]? path = await taskPath;
                 string clear_path;
 
-                var context = this.DataContext as MainWindowViewModel;
-                clear_path = string.Join(@"\", path);
+                if (path != null) {
+                    var context = this.DataContext as MainWindowViewModel;
+                    clear_path = string.Join(@"\", path);
 
-                string s = File.ReadAllText(clear_path);
+                    string s = File.ReadAllText(clear_path);
 
-                context.Text = s;
+                    context.Text = s;
+                }
+                    
 
             };
 

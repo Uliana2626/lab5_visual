@@ -7,7 +7,7 @@ namespace lab5_visual.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        string text;
+        string text = "";
         string regExp;
         string result;
         public string Text
@@ -32,7 +32,7 @@ namespace lab5_visual.ViewModels
 
         public static string FindRegexInText(string Text, string CurrentRegex)
         {
-            if (CurrentRegex == String.Empty || CurrentRegex == null)
+            if (CurrentRegex == String.Empty || CurrentRegex == null || Text == "")
             {
                 return "Exception";
             }
